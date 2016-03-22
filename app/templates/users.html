@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Users{% endblock %}
+{% block content %}
+<h1>Users</h1>
+{% for user_id, user in users.items() %}
+<div class="user-card">
+    <img src="{{ user.image }}" alt="{{ user.name }} profile image">
+    <span><a href="/user/{{ user_id }}">{{ user.name }}</a></span>
+    <a href="mailto:{{ user.email }}"><i class="fa fa-envelope"></i></a>
+</div>
+{% endfor %}
+{% endblock %}

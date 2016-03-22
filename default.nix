@@ -5,8 +5,8 @@ stdenv.mkDerivation rec {
   # Mandatory boilerplate for buildable env
   env = buildEnv { name = name; paths = buildInputs; };
   builder = builtins.toFile "builder.sh" ''
-  source $stdenv/setup; ln -s $env $out
-	    '';
+    source $stdenv/setup; ln -s $env $out
+    '';
 
   # Customizable development requirements
   buildInputs = [
